@@ -700,6 +700,7 @@ footer .row .f-menu a:hover {
   width: 280px;
   min-height: 88vh;
   z-index: 999;
+  margin-top: -5px;
 }
 .favorites .sidebar .card .card-header {
   background-color: white;
@@ -1240,6 +1241,13 @@ footer .row .f-menu a:hover {
   .wrapper {
     margin-top: 70px;
   }
+
+  .favorites .sidebar .card {
+    margin-top: 30px;
+  }
+  .favorites .fav-items-content {
+    margin-top: 100px;
+  }
 }
 @media only screen and (max-width: 768px) {
   #term-of-use #term-sheet {
@@ -1314,6 +1322,7 @@ footer .row .f-menu a:hover {
   .favorites .sidebar .card {
     min-height: fit-content;
     width: 100%;
+    margin-top: -6px;
   }
   .favorites .sidebar .card .card-header h3 {
     font-size: 16px;
@@ -1439,6 +1448,14 @@ footer .row .f-menu a:hover {
   .signIn .signCard .card-footer .otherWays p {
     font-size: 10px;
   }
+
+  .favorites .sidebar .card {
+    margin-top: -7px;
+  }
+  .favorites .fav-items-content {
+    margin-left: 120px;
+    margin-right: 120px;
+  }
 }
 @media only screen and (max-width: 512px) {
   #term-of-use #term-sheet {
@@ -1532,6 +1549,9 @@ footer .row .f-menu a:hover {
     width: 15px;
   }
 
+  .favorites .sidebar .card {
+    margin-top: -5px;
+  }
   .favorites .fav-items-content {
     margin-left: 100px;
     margin-right: 100px;
@@ -1637,9 +1657,12 @@ footer .row .f-menu a:hover {
     display: none;
   }
 
+  .favorites .sidebar .card {
+    margin-top: -10px;
+  }
   .favorites .fav-items-content {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
   .signIn .signCard .signInHeader .signTitle h3 {
