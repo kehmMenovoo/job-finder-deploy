@@ -104,6 +104,15 @@
     }
 }
 @media only screen and (max-width: 1000px) {
+    .job-post {
+        .form-group-heading {
+            .logo-post {
+                img {
+                    width: 40px;
+                }
+            }
+        }
+    }
     #term-of-use {
         
         #term-sheet {
@@ -225,8 +234,19 @@
     }
     
 }
+
+// ---------------------------------------------------------------------------------------------------------------------
+
 @media only screen and (max-width: 768px) {
-    
+    .job-post {
+        .form-group-heading {
+            .logo-post {
+                img {
+                    width: 30px;
+                }
+            }
+        }
+    }
     #term-of-use {
         #term-sheet {
             margin: 110px 70px;
@@ -443,7 +463,19 @@
     }
     
 }
+
+// **********************************************************************************************************************
+
 @media only screen and (max-width: 575px) {
+    .job-post {
+        .form-group-heading {
+            .logo-post {
+                img {
+                    width: 30px;
+                }
+            }
+        }
+    }
     main {
        .content-container {
            padding-left: 100px;
@@ -510,7 +542,19 @@
         }
     }
 }
+
+// **********************************************************************************************************************
+
 @media only screen and (max-width: 512px) {
+    .job-post {
+        .form-group-heading {
+            .logo-post {
+                img {
+                    width: 35px;
+                }
+            }
+        }
+    }
     #term-of-use {
         #term-sheet {
             margin: 110px 20px;
@@ -644,6 +688,15 @@
 }
 
 @media only screen and (max-width: 380px) {
+    .job-post {
+        .form-group-heading {
+            .logo-post {
+                img {
+                    width: 30px;
+                }
+            }
+        }
+    }
     #term-of-use {
         #term-sheet {
             margin: 110px 10px;

@@ -33,6 +33,14 @@
         &:hover {
             cursor: pointer;
         }
+
+        .logo-post {
+            .form-input {
+                img {
+                    width: 90px;
+                }
+            }
+        }
     }
     .form-group-content {
         width: 100%;
