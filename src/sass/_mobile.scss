@@ -1,0 +1,792 @@
+@media only screen and (min-width: 1201px) {
+    main {
+        .content-container {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+    }
+    
+}
+@media only screen and (max-width: 1200px) {
+   .navbar {
+        .search-item {
+            display: block;
+        }
+   }
+   main {
+        .content-container {
+            padding-left: 0px;
+            padding-right: 0px;
+
+            .row {
+                .card {
+                    .card-header {
+                        img {
+                            width: 50px;
+                        }
+                        .card-title {
+                            font-size: 13px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+        .favorites {
+            .fav-items-content {
+                margin-left: 310px;
+            }
+        }
+    }
+    .favorites {
+        padding: 59px 0;
+        .sidebar {
+
+            .card {
+                min-height: fit-content;
+                width: 100%;
+
+                .card-header {
+                    h3 {
+                        font-size: 16px;
+                    }
+                    .iconify {
+                        display: block;
+                        margin-top: -5px;
+                        margin-right: 30px;
+                        width: 30px;
+                    }
+
+                }
+                .card-body {
+                    display: none;
+                    transition: 1s all ease;
+
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .fav-items-content {
+            margin-top: 50px;
+            margin-left: 30px;
+            margin-right: 30px;
+
+            .card {
+                .card-header {
+                    img {
+                        width: 80px;
+                    }
+                    .card-body {
+                        h5 {
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                        .card-text.area {
+                            font-size: 10px;
+                        }
+                        .card-text.date {
+                            font-size: 10px;
+                        }
+                        .pop {
+                            font-size: 10px;
+                        }
+                    }
+                }
+                .card-body {
+                    .card-text {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1000px) {
+    #term-of-use {
+        
+        #term-sheet {
+            margin: 110px 100px;
+           
+        }
+
+    }
+    .signIn {
+        .signCard {
+
+            .signInHeader {
+                .signTitle {
+                    h3 {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .card-body {
+                padding: 15px 50px 40px 50px;
+                form {
+                    label {
+                        font-size: 14px;
+                    }
+                    input {
+                        font-size: 14px;
+                    }
+                }
+                .log {
+                    .log-btn {
+                        button {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .navbar {
+        .menu-item {
+            display: none;
+        }
+        // .sign-in {
+        //     width: fit-content;
+        // }
+        .mb-menu {
+            display: block;
+            
+            .nav-link {
+                border-radius: 10px;
+                margin-top: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .iconify {
+                    color: $dark-gray;
+                }
+
+                &.active {
+                    background-color: $main-color;
+                    .iconify {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    .type-page {
+    
+        .types-menu {
+            padding-top: 50px;
+            padding-bottom: 0px;
+            padding-left: 120px;
+        }
+        .title-categories {
+            display: none;
+        }
+    }
+    main {
+        margin-top: 60px;
+
+        .content-container {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+    .home {
+        .browse-bottom {
+            .move-down {
+                a {
+                    padding: 0px 10px;
+                    span {
+                        font-size: 12px;
+                    }
+                    .iconify {
+                        width: 15px;
+                    }
+    
+                }
+            }
+        }
+    }
+    .postForm {
+        padding-top: 10px;
+    }
+    .wrapper {
+        margin-top: 70px;
+    }
+    
+}
+@media only screen and (max-width: 768px) {
+    
+    #term-of-use {
+        #term-sheet {
+            margin: 110px 70px;
+            .title-term {
+                h3 {
+                    font-size: 23px;
+                }
+            }
+            .text-content-sheet {
+                h5 {
+                    font-size: 19px;
+                }
+            }
+        }
+    }
+    header {
+        display: none;
+    }
+    .type-page {
+    
+        .types-menu {
+            padding-top: 50px;
+            padding-bottom: 0px;
+            padding-left: 70px;
+        }
+        .title-categories {
+            display: none;
+        }
+    }
+    main {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 80px;
+        .content-container {
+            padding-left: 50px;
+            padding-right: 50px;
+            .container-fluid {
+                .row {
+                    .card {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        
+                        .card-header {
+                            .img-fluid {
+                                width: 60px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .postForm {
+        font-size: 12px;
+
+        .job-post {
+            padding-left: 15px;
+            padding-right: 15px;
+
+            #publishTop {
+                display: none;
+            }
+            input {
+                font-size: 12px;
+                height: 30px;
+            }
+            select {
+                font-size: 12px;
+            }
+            .selectForm {
+                height: 10px;
+            }
+            .describe-job {
+                font-size: 12px;
+            }
+        }
+    }
+    .favorites {
+        padding: 95px 0;
+        .sidebar {
+            .card {
+                min-height: fit-content;
+                width: 100%;
+
+                .card-header {
+                    h3 {
+                        font-size: 16px;
+                    }
+                    .iconify {
+                        display: block;
+                        margin-top: -5px;
+                        margin-right: 30px;
+                        width: 30px;
+                    }
+
+                }
+                .card-body {
+                    display: none;
+                    transition: 1s all ease;
+
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .fav-items-content {
+            margin-top: 50px;
+            margin-left: 30px;
+            margin-right: 30px;
+
+            .card {
+                .card-header {
+                    img {
+                        width: 80px;
+                    }
+                    .card-body {
+                        h5 {
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                        .card-text.area {
+                            font-size: 10px;
+                        }
+                        .card-text.date {
+                            font-size: 10px;
+                        }
+                        .pop {
+                            font-size: 10px;
+                        }
+                    }
+                }
+                .card-body {
+                    .card-text {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    #register-form {
+        .card {
+            .card-header {
+                .signTitle {
+                    h3 {
+                        font-size: 20px;
+                    }
+                }
+                .logoSign {
+                    img {
+                        width: 25px;
+                    }
+                }
+            }
+            .card-body {
+                padding: 30px 30px;
+                form {
+                    .signEmail {
+                        width: fit-content;
+                        input {
+                            width: 200px;
+                            font-size: 12px;
+                        }
+                    }
+
+                    .user-name {
+                        display: block;
+
+                        .first {
+                            width: fit-content;
+
+                            input {
+                                width: unset;
+                                font-size: 12px;
+                            }
+                        }
+                        .last {
+                            input {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    .gender {
+                        input {
+                            font-size: 12px;
+                        }
+                        label {
+                            font-size: 12px;
+                        }
+                    }
+                    .country-select {
+                        font-size: 12px;
+                    }
+                    .term {
+                        input {
+                            font-size: 12px;
+                        }
+                        label {
+                            font-size: 12px;
+                        }
+                    }
+                    .submit {
+                        .btn-register {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+@media only screen and (max-width: 575px) {
+    main {
+       .content-container {
+           padding-left: 100px;
+           padding-right: 100px;
+       }
+    }
+    footer {
+        h5 {
+            font-size: 14px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .signIn {
+        .signCard {
+
+            .signInHeader {
+                .signTitle {
+                    h3 {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .card-body {
+                padding: 10px 40px 35px 40px;
+                form {
+                    label {
+                        font-size: 12px;
+                    }
+                    input {
+                        font-size: 12px;
+                        width: 180px;
+                    }
+                    .forgot {
+                        font-size: 10px;
+                    }
+                    .log {
+                        .log-btn {
+                            button {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+            .card-footer {
+                .otherWays {
+                    p {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 512px) {
+    #term-of-use {
+        #term-sheet {
+            margin: 110px 20px;
+            .title-term {
+                .tools {
+                    .iconify {
+                        width: 25px;
+                    }
+                }
+            }
+            .text-content-sheet {
+                padding: 10px 10px;
+            }
+
+            
+        }
+    }
+    .navbar .collapse {
+        .search-item {
+            .logo .navbar-brand img {
+                width: 30px;
+            }
+            .search {
+                width: 150px;
+                margin: 0;
+                padding: 0;
+
+                label {
+                    i {
+                        font-size: 13px;
+                    }
+                }
+                input {
+                    font-size: 12px;
+                    height: fit-content;
+                    padding: 0;
+                    padding-left: 5px;
+                }
+            }
+        }
+
+       .sign-in {
+           width: 100%;
+           padding: 0;
+           gap: 2px;
+           #register {
+               font-size: 10px;
+               padding: 2px 4px;
+           }
+           #sign-in {
+                font-size: 10px;
+               padding: 2px 4px;
+           }
+       }
+    }
+
+    .type-page {
+    
+        .types-menu {
+            padding-top: 50px;
+            padding-bottom: 0px;
+            padding-left: 20px;
+        }
+        .title-categories {
+            display: none;
+        }
+    }
+    main {
+        margin-top: 80px;
+
+        .content-container {
+            padding-left: 70px;
+            padding-right: 70px;
+            .row {
+                .card {
+                    .card-header {
+                        .card-title {
+                            font-size: 12px;
+                            font-weight: 700;
+                        }
+                        .card-text.area {
+                            font-size: 9px;
+                        }
+                        .card-text.date {
+                            font-size: 9px;
+                        }
+                        .pop {
+                            font-size: 10px;
+                        }
+                     }
+                     .card-body {
+                         .card-title {
+                             font-size: 11px;
+                             font-weight: 600;
+                         }
+                         .card-text {
+                             font-size: 10px;
+                         }
+                     }
+                }
+            }
+        }
+    }
+    .home {
+        .browse-bottom {
+            margin: 0 auto 40px auto;
+
+            .move-down {
+                a {
+                    padding: 0px 10px;
+                    span {
+                        font-size: 10px;
+                    }
+                    .iconify {
+                        width: 15px;
+                    }
+    
+                }
+            }
+        }
+    }
+    .favorites {
+        .fav-items-content {
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    #term-of-use {
+        #term-sheet {
+            margin: 110px 10px;
+            
+            .title-term {
+                h3 {
+                    font-size: 20px;
+                }
+            }
+            .text-content-sheet {
+                padding: 10px 10px;
+
+                h5 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 12px;
+                }
+            }
+
+            
+        }
+    }
+    .navbar {
+        .collapse.navbar-collapse {
+            .search-item .search {
+                &:focus-within .d-flex {
+                    width: 150px;
+                    background-color: white;
+                }
+                .d-flex {
+                    width: 45px;
+                    border: none;
+                    background-color: unset;
+    
+                    input[type=search-input] {
+                        background-color: unset;
+                    }
+                }
+            }
+            .sign-in {
+                padding-right: 5px;
+                button#sign-in {
+                    display: none;
+                }
+            }
+        }
+
+        .mb-menu {
+            .nav {
+                overflow-x: auto;
+                
+                &::-webkit-scrollbar
+                {
+                    width: 0;
+                    height: 0;
+                }
+                &::-webkit-scrollbar-thumb
+                {
+                    border: none;
+                    background-clip: unset;
+                    border-radius: 20px;
+                    background-color: unset;
+                }
+                &::-webkit-scrollbar-track {
+                    background-color: unset;
+                }
+            }
+        }
+    }
+
+    main {
+        margin-top: 70px;
+
+        .container-fluid {
+            .row {
+                .card {
+                    .card-header {
+                       .card-title {
+                           font-size: 12px;
+                           font-weight: 700;
+                       }
+                       .card-text.area {
+                           font-size: 9px;
+                       }
+                       .card-text.date {
+                           font-size: 9px;
+                       }
+                       .pop {
+                           font-size: 10px;
+                       }
+                    }
+                    .card-body {
+                        .card-title {
+                            font-size: 11px;
+                            font-weight: 600;
+                        }
+                        .card-text {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .type-page {
+    
+        .types-menu {
+            padding-top: 50px;
+            padding-bottom: 0px;
+            padding-left: 5px;
+            overflow-x: auto;
+            // background-color: rgb(255, 255, 255);
+            @extend %flex-box;
+            gap: 10px;
+
+            &::-webkit-scrollbar
+            {
+                width: 0;
+                height: 0;
+            }
+            &::-webkit-scrollbar-thumb
+            {
+                border: none;
+                background-clip: unset;
+                border-radius: 20px;
+                background-color: unset;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: unset;
+            }
+            
+            .title-categories {
+                display: none;
+            }
+        }
+    }
+    .favorites {
+        .fav-items-content {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+
+    .signIn {
+        .signCard {
+
+            .signInHeader {
+                .signTitle {
+                    h3 {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .card-body {
+                padding: 10px 20px 40px 20px;
+                form {
+                    label {
+                        font-size: 14px;
+                    }
+                    input {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
