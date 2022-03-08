@@ -3,7 +3,7 @@ import DataContext from "../../../contexts/DataContext";
 import PageLoading from "../../../layout/PageLoading";
 import JobItems from "./JobItems";
 
-const Contents = ({data}) => {
+const Contents = ({jobData}) => {
     const {fetchError, isLoading} = useContext(DataContext);
 
     return (
@@ -12,7 +12,7 @@ const Contents = ({data}) => {
                 <PageLoading />
                 {!fetchError && !isLoading && 
                     <JobItems 
-                        data={data}
+                        jobData={jobData}
                     />
                 }
             </main>

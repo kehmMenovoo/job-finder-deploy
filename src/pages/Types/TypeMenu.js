@@ -39,7 +39,7 @@ const TypeMenu = () => {
                     </div>
                     <main style={{marginTop: "50px"}}>
                         <Contents
-                            data={dataCustomize}
+                            jobData={dataCustomize}
                             pageCount={!(jobLevel || jobType || jobTime) ? pageCount : Math.ceil(dataCustomize.length/limit)}
                         />
                     </main>

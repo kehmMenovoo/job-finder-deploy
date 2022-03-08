@@ -67,7 +67,7 @@ const Boost = () => {
     }
 
     return (
-        <div className="boost-job">
+        <div className="boost-job" id="boost-job">
             {loading && (
                 <div style={{width: "100%", height: "100%", position: "fixed", zIndex: "9999999", background: "white"}}>
                     <div class="d-flex justify-content-center loading" style={{display: "flex", flexDirection: "column", gap: "10px", justifyContent: "center", alignItems: "center", height: "100%"}}>
@@ -180,6 +180,9 @@ const Boost = () => {
                                     <td><button>Choose</button></td>
                                 </tr>
                             </table>
+                        </div>
+                        <div className="get-btn">
+                            <button className="btn-register">Get Package</button>
                         </div>
                     </div>
                 </>

@@ -5,7 +5,7 @@ import DataContext from "./contexts/DataContext";
 import Favorite from "./pages/Favorites/Favorite";
 import Header from "./pages/Home/Header/Header";
 import Home from "./pages/Home/Home";
-import JobInfo from "./pages/Info_Job/Job_info";
+import JobInfo from "./pages/InfoJob/JobInfo";
 import Missing from "./pages/Error/Missing";
 import Post from './pages/Post/Post';
 import PostProject from "./pages/Post/PostProject";
@@ -20,7 +20,7 @@ import { useContext } from "react";
 
 function App() {
 
-  const {splitLocation, search, } = useContext(DataContext);
+  const {splitLocation, search} = useContext(DataContext);
   
   const title=["Search", "Home", "Job Types", "Favorites", "Post", "Contact Us", "Job Information", "Register", 
     "Sign in", "Boost", "Post Project", "About", "Privacy", "Term of Use", "Page Not Found"];

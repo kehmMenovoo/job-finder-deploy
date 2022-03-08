@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import DataContext from "../../contexts/DataContext";
 
-const InfoContent = ({data}) => {
+const InfoContent = ({jobData}) => {
     
     const {history} = useContext(DataContext);
 
-    // document.querySelector('#info').innerText = data.description ? data.description:"No description!";
+    // document.querySelector('#info').innerText = jobData.description ? jobData.description:"No description!";
 
     function titleCase(str) {
         var splitStr = str.split(' ');
@@ -19,9 +19,12 @@ const InfoContent = ({data}) => {
     const goBack = () => {
         history.goBack();
     }
+    const goTop = () => {
+        window.scrollTo(0, 0);
+    }
     
     return (
-        <>
+        <div className="info-job">
             <div className="job-sidebar">
                 <>
                     <div className="tools">
@@ -35,22 +38,22 @@ const InfoContent = ({data}) => {
                     </div>
                     <div className="info-logo">
                         <div>
-                            <img src={data.avatar} alt={data.id} />
+                            <img src={jobData.avatar} alt={jobData.id} />
                         </div>
                         <div className="company">
-                            <h5>{data.company}</h5>
-                            <p style={{color: "gray", fontSize: "13px"}}>Published: {data.postDate}</p>
+                            <h5>{jobData.company}</h5>
+                            <p style={{color: "gray", fontSize: "13px"}}>Published: {jobData.postDate}</p>
                         </div>
                     </div><br />
                     <div className="info-position">
                         <p><b>We are hiring:</b></p>
-                        <p style={{color: "rgb(43, 149, 255)"}}>{data.position}</p>
+                        <p style={{color: "rgb(43, 149, 255)"}}>{jobData.position}</p>
                     </div>
                 </>
                 <div className="button-apply">
                     <div className="apply">
                         <form>
-                            <button type="submit">
+                            <button>
                                 <span class="iconify" data-icon="bi:send-check"></span>
                                 <span class="iconify" data-icon="bi:send-check-fill"></span>
                             </button>
@@ -80,46 +83,46 @@ const InfoContent = ({data}) => {
                     <table>
                         <tr>
                             <td><b>Published Date </b></td>
-                            <td>: {titleCase(data.postDate)}</td>
+                            <td>: {titleCase(jobData.postDate)}</td>
                         </tr>
                         <tr>
                             <td><b>Closing Date </b></td>
-                            <td>: <span className="closing">{titleCase(data.due)}</span></td>
+                            <td>: <span className="closing">{titleCase(jobData.due)}</span></td>
                         </tr>
                         <tr>
                             <td><b>Job Type </b></td>
-                            <td>: {titleCase(data.typeJob)}</td>
+                            <td>: {titleCase(jobData.typeJob)}</td>
                         </tr>
                         <tr>
                             <td><b>Entry Level </b></td>
-                            <td>: {titleCase(data.entryLevel)}</td>
+                            <td>: {titleCase(jobData.entryLevel)}</td>
                         </tr>
                         <tr>
                             <td><b>Duration Type </b></td>
-                            <td>: {titleCase(data.durationType)}</td>
+                            <td>: {titleCase(jobData.durationType)}</td>
                         </tr>
                         <tr>
                             <td><b>Job Location </b></td>
-                            <td>: {titleCase(data.location)}</td>
+                            <td>: {titleCase(jobData.location)}</td>
                         </tr>
-                        {data.department ? ( 
+                        {jobData.department ? ( 
                             <tr>
                                 <td><b>Department </b></td>
-                                <td>: {titleCase(data.department)}</td>
+                                <td>: {titleCase(jobData.department)}</td>
                             </tr>) 
                             : null
                         }
-                        {data.subDepartment ? (
+                        {jobData.subDepartment ? (
                              <tr>
                                 <td><b>Sub-department </b></td>
-                                <td>: {titleCase(data.subDepartment)}</td>
+                                <td>: {titleCase(jobData.subDepartment)}</td>
                             </tr>)
                             : null
                         }
-                        {data.report ? (
+                        {jobData.report ? (
                             <tr>
                                 <td><b>Report to </b></td>
-                                <td>: {titleCase(data.Report)}</td>
+                                <td>: {titleCase(jobData.Report)}</td>
                             </tr>)
                             : null
                         }
@@ -129,17 +132,17 @@ const InfoContent = ({data}) => {
                     <div className="job-description">
                         <h4>Job Description</h4>
                         <div className="detailed" id="info">
-                            {data.description ? data.description:"No description!"}
+                            {jobData.description ? jobData.description:"No description!"}
                         </div>
                     </div>
                 </div>
 
-                <footer className="copyright" style={{margin: "0 10px 10px 420px", borderRadius: "10px"}}>
+                <footer className="copyright">
                     <div className="container">
                         <div className="know-us">
-                            <Link to="/about">About Us</Link> | 
-                            <Link to="/privacy"> Privacy Policy</Link> |
-                            <Link to="/termofuse"> Term of Use</Link>
+                            <Link to="/about" onClick={goTop}>About Us</Link> | 
+                            <Link to="/privacy" onClick={goTop}> Privacy Policy</Link> |
+                            <Link to="/termofuse" onClick={goTop}> Term of Use</Link>
                         </div>
                         <div className="c-right">
                             <p>Copyright 2022 <a href="/">Khom Rok</a> all rights reserved</p>
@@ -147,7 +150,7 @@ const InfoContent = ({data}) => {
                     </div>
                 </footer>
             </>
-        </>
+        </div>
     )
 }
 

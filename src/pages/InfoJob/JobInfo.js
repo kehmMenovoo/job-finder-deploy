@@ -1,14 +1,14 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import InfoContent from './InfoContent';
 import DataContext from '../../contexts/DataContext';
 import PageLoading from '../../layout/PageLoading';
 
-const Job_info = () => {
+const JobInfo = () => {
 
     const {isLoading, fetchError, allData} = useContext(DataContext);
-    const {id} = useParams();
-    const data = allData.find(post => (post.id).toString() === id);
+    let {id} = useParams();
+    const jobData = allData.find(post => (post.id).toString() === id);
     document.getElementById("web_icon").href = "../../images/JOBFINDER.png";
 
     return (
@@ -16,11 +16,11 @@ const Job_info = () => {
             <PageLoading />
             {!fetchError && !isLoading && 
                 <>
-                    <InfoContent data={data} />
+                    <InfoContent jobData={jobData} />
                 </>
             }
         </div>
     )
 }
 
-export default Job_info
+export default JobInfo;

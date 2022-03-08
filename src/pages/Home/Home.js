@@ -22,18 +22,18 @@ const Home = () => {
                     <Slider />
                     <div style={{backgroundColor: "#e0e0e0"}}>
                         <Contents 
-                            data={totalData} 
+                            jobData={totalData} 
                             pageCount={Math.ceil(totalData.length/limit)}
                         />
                         <div className="browse-bottom">
                             <div className="move-down">
-                                <a href="#browse">
+                                <Link to="/" onClick={toTop}>
                                     <span>Back to Top &nbsp;</span>
                                     <span class="iconify" data-icon="bi:arrow-up-circle" data-width="28"></span>
-                                </a>
+                                </Link>
                             </div>
                             <div className="move-down">
-                                <Link to="jobtype" onClick={toTop}>
+                                <Link to="/jobtype" onClick={toTop}>
                                     <span>Explore More &nbsp;</span>
                                     <span class="iconify" data-icon="ic:outline-explore" data-width="28"></span>
                                 </Link>

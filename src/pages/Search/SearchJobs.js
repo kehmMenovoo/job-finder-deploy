@@ -10,7 +10,7 @@ const SearchJobs = () => {
     return (
         <div style={{marginTop: "80px"}}>
             <Contents 
-                data={dataItem}
+                jobData={dataItem}
             />
             <FooterMenu />
             <Copyright />

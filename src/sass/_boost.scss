@@ -125,5 +125,20 @@
                 }
             }
         }
+        .get-btn {
+            @extend %flex-box;
+            justify-content: center;
+            padding: 20px;
+            padding-bottom: 50px;
+
+            .btn-register {
+                width: 50%;
+                border: none;
+                background-color: $main-color;
+                color: white;
+                padding: 8px;
+                border-radius: 10px;
+            }
+        }
     }
 }

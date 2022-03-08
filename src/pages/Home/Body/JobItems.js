@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useContext } from "react";
 import PageLoading from "../../../layout/PageLoading";
 
-const JobItems = ({data}) => {
+const JobItems = ({jobData}) => {
     const {fetchError, isLoading, search, splitLocation, pageCount, handlePageClick, currentPage, limit} = useContext(DataContext);
 
     return (
@@ -15,9 +15,9 @@ const JobItems = ({data}) => {
                 <div className="container-fluid mt-4 d-flex align-items-center gap-3" id="job-items">
                     <div className="count-jobs text-secondary" id="jobcount-res">
                         {search && splitLocation[1] === 'search' ? 
-                            `Search for: ${search} | Found: ${data.length} ${data.length !== 1 ? "results" : "result"}`
+                            `Search for: ${search} | Found: ${jobData.length} ${jobData.length !== 1 ? "results" : "result"}`
                             : 
-                            `Found: ${data.length} ${data.length !== 1 ? "results" : "result"}`
+                            `Found: ${jobData.length} ${jobData.length !== 1 ? "results" : "result"}`
                         }
                     </div>
                 </div>
@@ -26,10 +26,10 @@ const JobItems = ({data}) => {
                         <PageLoading />
                         {!fetchError && !isLoading && 
                             <AnimatePresence>
-                               {data.map(item => (
+                               {jobData.map(item => (
                                     <Job key={item.id} item={item} />
                                 ))}
-                                {!isLoading && data.length === 0 ? (
+                                {!isLoading && jobData.length === 0 ? (
                                     <div style={{textAlign: "center", color: "gray", marginTop: "100px", marginBottom: "150px", minHeight: "40vh"}}>
                                         <img src={sadRobot} className="mb-3" alt="Not Found" width="150px"/>
                                         <h3>No Jobs Found!</h3>
@@ -42,7 +42,7 @@ const JobItems = ({data}) => {
                 </div>
             </div>
            
-           {pageCount > 1 && splitLocation[1] && data.length <= limit ? 
+           {pageCount > 1 && splitLocation[1] && jobData.length <= limit ? 
                 <ReactPaginate
                     previousLabel={<><i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i></>}
                     nextLabel={<><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></>}
@@ -51,7 +51,7 @@ const JobItems = ({data}) => {
                     marginPagesDisplayed={2}
                     pageRangeDisplayed={3}
                     forcePage={currentPage-1}
-                    onPageChange={(data) => handlePageClick(data.selected)}
+                    onPageChange={(jobData) => handlePageClick(jobData.selected)}
                     containerClassName={"pagination justify-content-center"}
                     pageClassName={"page-item"}
                     pageLinkClassName={"page-link"}
