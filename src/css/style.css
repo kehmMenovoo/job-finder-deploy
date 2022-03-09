@@ -1100,6 +1100,10 @@ footer .row .f-menu a:hover {
     padding-left: 100px;
     padding-right: 100px;
   }
+
+  .job-post .logo-post .form-input img {
+    width: 120px;
+  }
 }
 @media only screen and (max-width: 1200px) {
   .navbar .search-item {

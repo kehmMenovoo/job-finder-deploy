@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const FooterMenu = () => {
     return (
@@ -20,33 +21,33 @@ const FooterMenu = () => {
                         <div className="f-menu col-md-3 col-sm-4 ">
                             <h5>job seekers</h5>
                             <p>
-                                <a href="/">Top Careers</a>
+                                <Link to="/">Top Careers</Link>
                             </p>
                             <p>
-                                <a href="/jobtype">Discover Job Types</a>
+                                <Link to="/jobtype">Discover Job Types</Link>
                             </p>
                         </div>
 
                         <div className="f-menu col-md-3 col-sm-4 ">
                             <h5>employers</h5>
                             <p>
-                                <a href="/post">Post a Job</a>
+                                <Link to="/post">Post a Job</Link>
                             </p>
                             <p>
-                                <a href="/boost">Package Boost</a>
+                                <Link to="/boost">Package Boost</Link>
                             </p>
                         </div>
 
                         <div className="f-menu col-md-3 col-sm-4 ">
                             <h5>Social Media</h5>
                             <p>
-                                <a href="https://www.facebook.com/">Facebook Page</a>
+                                <Link to="https://www.facebook.com/">Facebook Page</Link>
                             </p>
                             <p>
-                                <a href="https://linkedin.com/">LinkedIn</a>
+                                <Link to="https://linkedin.com/">LinkedIn</Link>
                             </p>
                             <p>
-                                <a href="https://twitter.com/">Twitter</a>
+                                <Link to="https://twitter.com/">Twitter</Link>
                             </p>
                         </div>
                     </div>
