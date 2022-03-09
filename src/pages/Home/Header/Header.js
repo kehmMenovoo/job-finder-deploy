@@ -99,7 +99,7 @@ const Header = () => {
 
                         <div className="sign-in">
                             <Link to="/register" onClick={scrollToTop}>
-                                <button id="register">Regiter</button>
+                                <button id="register">Register</button>
                             </Link>
                             <Link to="/sign_in" onClick={scrollToTop}>
                                 <button id="sign-in">Sign in</button>
