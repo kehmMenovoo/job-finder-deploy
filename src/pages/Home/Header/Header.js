@@ -25,18 +25,22 @@ const Header = () => {
                             </div>
                             <div className="search">
                                     <form className="d-flex align-items-center" autoComplete="off" onSubmit={e => handleSearch(e)} >
-                                        <label className="search-icon">
-                                            <span class="iconify" data-icon="bx:bx-search-alt-2"></span>
-                                        </label>
-                                        <input 
-                                            className="form-control me-2" 
-                                            id="Search-job" 
-                                            type="search-input" 
-                                            placeholder="Search..." 
-                                            aria-label="Search" 
-                                            value={valueSearch}
-                                            onChange={(e) => setValueSearch(e.target.value)}
-                                        />
+                                        <div>
+                                            <label className="search-icon">
+                                                <span class="iconify" data-icon="bx:bx-search-alt-2"></span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input 
+                                                className="form-control me-2" 
+                                                id="Search-job" 
+                                                type="search-input" 
+                                                placeholder="Search..." 
+                                                aria-label="Search" 
+                                                value={valueSearch}
+                                                onChange={(e) => setValueSearch(e.target.value)}
+                                            />
+                                        </div>
                                     </form>
                             </div>
                         </div>

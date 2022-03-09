@@ -152,15 +152,19 @@
 
                 }
                 .d-flex {
+                    @extend %flex-box;
                     border: 1px solid rgb(187, 187, 187);
                     border-radius: 10px;
                     background-color: white;
                     width: 150px;
                     padding: 2px;
                     padding-left: 14px;
+                   
+
                     .iconify {
                         color: gray;
                         font-size: 18px;
+                        margin-top: -2px;
                     }
                     input[type=search-input] {
         
