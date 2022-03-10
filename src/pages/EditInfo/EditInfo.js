@@ -153,7 +153,7 @@ const EditInfo = () => {
                         >
                             <option value="">Select an option</option>
                             <option value="Agriculture, Food, and Natural Resources">Agriculture, Food, and Natural Resources</option>
-                            <option value="aArchitecture and Construction">Architecture and Construction</option>
+                            <option value="Architecture and Construction">Architecture and Construction</option>
                             <option value="Arts, Audio/Video Technology, and Communication">Arts, Audio/Video Technology, and Communication</option>
                             <option value="Business and Finance">Business and Finance</option>
                             <option value="Education and Training">Education and Training</option>
