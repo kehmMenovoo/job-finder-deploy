@@ -25,9 +25,9 @@ const SignIn = () => {
         <div className="signIn">
             <PageLoading />
             {!fetchError && !isLoading && (
-                <motion.div animate={{opacity: 1}} initial={{opacity: 0}} exit={{opacity: 0}} layout class="signCard card border-success mb-3">
+                <motion.div animate={{opacity: 1}} initial={{opacity: 0}} exit={{opacity: 0}} layout className="signCard card border-success mb-3">
                    <AnimatePresence>
-                        <div class="signInHeader card-header bg-transparent">
+                        <div className="signInHeader card-header bg-transparent">
                             <div className="signBlank" onClick={goBack}>
                                 <span className="iconify" data-icon="bi:arrow-left-short"></span>
                             </div>
@@ -38,7 +38,7 @@ const SignIn = () => {
                                 <img src={JobFinder} alt="JF" />
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div className="card-body">
                             <form>
                                 <label>Email:</label><br />
                                 <div className="signEmail" style={{marginBottom: "10px"}}>
@@ -48,7 +48,7 @@ const SignIn = () => {
 
                                 <label>Password:</label><br />
                                 <div className="signEmail">
-                                    <span class="iconify" data-icon="bx:lock"></span>
+                                    <span className="iconify" data-icon="bx:lock"></span>
                                     <input type="password" required placeholder="Password..." minLength={8} />
                                 </div>
                                 <label className="forgot">Forgot password?</label>
@@ -62,7 +62,7 @@ const SignIn = () => {
                                 </div>
                             </form>
                         </div>
-                        <div class="card-footer bg-transparent">
+                        <div className="card-footer bg-transparent">
                             <div className="otherWays">
                                 <div className="other-sub">
                                     <p>Or</p>

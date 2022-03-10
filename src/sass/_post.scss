@@ -25,6 +25,14 @@
         cursor: pointer;
     }
 
+    .back-btn {
+        color: gray;
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
     .form-group-heading {
         display: flex;
         align-items: flex-start;

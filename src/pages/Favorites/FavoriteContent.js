@@ -18,7 +18,7 @@ const FavoriteContent = () => {
                     <div className="card-header">
                         <><h3>Favorites</h3></>
                         <div onClick={showMenu}>
-                            <span class="iconify" data-icon="entypo:menu"></span>
+                            <span className="iconify" data-icon="entypo:menu"></span>
                         </div>
                     </div>
                     <div className={toggleClass ? "card-body active":"card-body"}>
@@ -29,12 +29,12 @@ const FavoriteContent = () => {
                                     <option value="newest">Newest</option>
                                 </select>
                                 <label className="remove">
-                                    <span class="iconify" data-icon="dashicons:trash"></span>
+                                    <span className="iconify" data-icon="dashicons:trash"></span>
                                 </label>
                             </div>
                             <div className="find-fav">
                                 <label className="find">
-                                    <span class="iconify" data-icon="bx:bx-search-alt-2"></span>
+                                    <span className="iconify" data-icon="bx:bx-search-alt-2"></span>
                                 </label>
                                 <br />
                                 <input type="text" placeholder="Find..." />

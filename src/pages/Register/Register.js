@@ -14,8 +14,8 @@ const Register = () => {
     }
     return (
         <div className="register-form" id="register-form">
-            <div class="card text-dark mb-3">
-                <div class="card-header">
+            <div className="card text-dark mb-3">
+                <div className="card-header">
                     <div className="signBlank" onClick={goBack}>
                         <span className="iconify" data-icon="bi:arrow-left-short"></span>
                     </div>
@@ -27,28 +27,28 @@ const Register = () => {
                     </div>
                 </div>
                 
-                <div class="card-body">                  
+                <div className="card-body">                  
                     <form autoComplete="on">
                         <div className="signEmail">
                             <span className="iconify" data-icon="akar-icons:envelope"></span>
                             <input type="email" required pattern=".+@gmail\.com" placeholder="Email" />
                         </div>
                         <div className="signEmail">
-                            <span class="iconify" data-icon="bx:lock"></span>
+                            <span className="iconify" data-icon="bx:lock"></span>
                             <input type="password" required placeholder="Password" minLength={8} />
                         </div>
 
                         <div className="signEmail">
-                            <span class="iconify" data-icon="bx:lock"></span>
+                            <span className="iconify" data-icon="bx:lock"></span>
                             <input type="password" required placeholder="Confirm Password" minLength={8} />
                         </div>
                         <div className="user-name">
                             <div className="first">
-                                <span class="iconify" data-icon="icon-park-outline:edit-name"></span>
+                                <span className="iconify" data-icon="icon-park-outline:edit-name"></span>
                                 <input type="firstname" required placeholder="First Name" />
                             </div>
                             <div className="last">
-                                <span class="iconify" data-icon="icon-park-outline:edit-name"></span>
+                                <span className="iconify" data-icon="icon-park-outline:edit-name"></span>
                                 <input type="lastname" required placeholder="Last Name" />
                             </div>
                         </div>

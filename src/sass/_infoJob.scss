@@ -43,6 +43,12 @@
             .more-tools {
                 padding-bottom: 20px;
                 width: fit-content;
+
+                &:focus-within {
+                    .iconify {
+                        color: $main-color;
+                    }
+                }
     
                 .iconify {
                     font-size: 21px;
@@ -51,6 +57,14 @@
                     &:hover {
                         cursor: pointer;
                         color: $main-color;
+                    }
+                    
+                }
+                .dropdown-menu {
+                    .dropdown-item {
+                        &:hover {
+                            cursor: pointer;
+                        }
                     }
                 }
                 

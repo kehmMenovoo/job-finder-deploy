@@ -1,17 +1,18 @@
 import { Editor } from '@tinymce/tinymce-react';
-
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
 import UploadImage from "../../images/upload-logo.jpg";
 import DataContext from '../../contexts/DataContext';
 import Button from "@material-ui/core/Button";
+import { useParams } from 'react-router-dom';
 
+const EditInfo = () => {
+    const {handleEditSave, allData, selectedImage, setSelectedImage, setEditBoost, setEditAvatar, editCompany, setEditCompany, editLocationCompany, setEditLocationCompany,
+        editDue, setEditDue, editPosition, setEditPosition, editTypeJob, setEditTypeJob,
+        editDurationType, setEditDurationType, editEntryLevel, setEditEntryLevel,editDepartment, setEditDepartment,
+        editSubDepartment, setEditSubDepartment, editReport, setEditReport, editDescription, setEditDescription, history} = useContext(DataContext);
 
-const PostForm = () => {
-    const {selectedImage, setSelectedImage, setAvatar, company, setCompany, locationCompany, 
-        setLocationCompany, due, setDue, position, setPosition, typeJob, 
-        setTypeJob, durationType, setDurationType, entryLevel, setEntrylevel, department, setDepartment,
-        subDepartment, setSubDepartment, report, setReport, setDescription, handlePostJob} = useContext(DataContext);
-
+    const {id} = useParams();
+    const info = allData.find(item => (item.id).toString() === id);
     const inputRef = useRef();
 
     const triggerSelect = (e) => {
@@ -22,28 +23,54 @@ const PostForm = () => {
     // This function will be triggered when the file field change
     const imageChange = (e) => {
       if (e.target.files && e.target.files.length > 0) {
-        setSelectedImage(e.target.files[0]);
-        setAvatar(UploadImage);
+        setSelectedImage(URL.createObjectURL(e.target.files[0]));
+        setEditAvatar(UploadImage);
       }
     };
   
     // This function will be triggered when the "Remove This Image" button is clicked
     const removeSelectedImage = () => {
       setSelectedImage();
-      setAvatar(UploadImage);
+      setEditAvatar(UploadImage);
     };
 
     const handleEditorChange = (e) => {
-        setDescription(e.target.getContent());
+        setEditDescription(e.target.getContent());
     }
+    const goBack = () => {
+        history.goBack();
+    }
+
+    useEffect(() => {
+        if(allData) {
+            setEditBoost(info.boost);
+            setSelectedImage(info.avatar);
+            setEditAvatar(info.avatar);
+            setEditCompany(info.company);
+            setEditLocationCompany(info.location);
+            setEditDue(info.due);
+            setEditPosition(info.position);
+            setEditTypeJob(info.typeJob);
+            setEditDurationType(info.durationType);
+            setEditEntryLevel(info.entryLevel);
+            setEditDepartment(info.department);
+            setEditSubDepartment(info.subDepartment);
+            setEditReport(info.Report);
+            setEditDescription(info.description);
+        }
+    }, [info, allData, setEditBoost, setSelectedImage, setEditAvatar, setEditCompany, setEditDepartment, setEditDescription, setEditDue, setEditDurationType,
+    setEditEntryLevel, setEditLocationCompany, setEditPosition, setEditReport, setEditSubDepartment, setEditTypeJob]);
     return (
         <div className="postForm container mt-5">
-            <form className="job-post" autoComplete='off' onSubmit={handlePostJob}>
+            <form className="job-post" autoComplete='off' onSubmit={() => handleEditSave(info.id)} >
+                <div className="back-btn mb-3" onClick={goBack}>
+                    <p><i className="fa fa-angle-left"></i> Back</p>
+                </div>
                 <div className="form-group-heading">
                     <div className='logo-post'>
                         <div className="form-input">
                             <div className="preview" onClick={triggerSelect}>
-                                <img id="img_file-preview" src={selectedImage ? URL.createObjectURL(selectedImage) : UploadImage} alt="thumb" />
+                                <img id="img_file-preview" src={selectedImage ? selectedImage : UploadImage} alt="thumb" />
                                 {!selectedImage && <p className="upload-msg">Upload Logo</p>}
                                 
                             </div>
@@ -78,8 +105,8 @@ const PostForm = () => {
                                 required 
                                 placeholder="Company/Organization..." 
                                 id="job_position" 
-                                value={company} 
-                                onChange={e => setCompany(e.target.value)} 
+                                value={editCompany} 
+                                onChange={e => setEditCompany(e.target.value)} 
                             />
                         </div>
                         <div className="form-group">
@@ -89,13 +116,13 @@ const PostForm = () => {
                                 required 
                                 placeholder="Job Positions..."
                                 id="job_company" 
-                                value={position}
-                                onChange={e => setPosition(e.target.value)}
+                                value={editPosition}
+                                onChange={e => setEditPosition(e.target.value)}
                             />
                         </div>
                     </div>
                     <div className="publish-btn" id="publishTop" >
-                        <input className="pub-btn" type="submit" value="Publish" />
+                        <input className="pub-btn" type="submit" value="Save"/>
                     </div>
                 </div>
 
@@ -107,9 +134,9 @@ const PostForm = () => {
                             type="date" 
                             className="form-control selectForm box box-1" 
                             id="closing_date" 
-                            value={due}
-                            onChange={e => setDue(e.target.value)}
-                            style={!due ? {paddingRight: "10px", color: "gray"} : {paddingRight: "10px"}}
+                            value={editDue}
+                            onChange={e => setEditDue(e.target.value)}
+                            style={!editDue ? {paddingRight: "10px", color: "gray"} : {paddingRight: "10px"}}
                         />
                     </div>
                 </div>
@@ -119,10 +146,10 @@ const PostForm = () => {
                         <select 
                             className="form-select selectForm box box-2" 
                             required 
-                            value={typeJob} 
+                            value={editTypeJob} 
                             id="job_type" 
-                            onChange={e => setTypeJob(e.target.value)}
-                            style={typeJob ? {}:{color: "gray"}}
+                            onChange={e => setEditTypeJob(e.target.value)}
+                            style={editTypeJob ? {}:{color: "gray"}}
                         >
                             <option value="">Select an option</option>
                             <option value="Agriculture, Food, and Natural Resources">Agriculture, Food, and Natural Resources</option>
@@ -144,14 +171,14 @@ const PostForm = () => {
                     <label for="entry_type" className="col-4 col-sm-2 col-form-label">Entry Level <span style={{color: "gray"}}>*</span>:</label>
                     <div className="form-group col-2">
                         <select className="form-select selectForm box box-2" id="entry_type" required 
-                            value={entryLevel} onChange={e => setEntrylevel(e.target.value)}
-                            style={entryLevel ? {}:{color: "gray"}}
+                            value={editEntryLevel} onChange={e => setEditEntryLevel(e.target.value)}
+                            style={editEntryLevel ? {}:{color: "gray"}}
                         >
                             <option value="">Select an option</option>
                             <option value="entry-Level">Entry-Level</option>
-                            <option value="experienced level">Experienced Level</option>
+                            <option value="experienced">Experienced Level</option>
                             <option value="executive">Executive</option>
-                            <option value="senior-executive">Senior Executive</option>
+                            <option value="Senior Executive">Senior Executive</option>
                             <option value="Manager/Supervisor">Manager/Supervisor</option>
                             <option value="Senior Manager/Supervisor">Senior Manager/Supervisor</option>
                             <option value="Unknown">Others</option>
@@ -162,8 +189,8 @@ const PostForm = () => {
                     <label for="duration_type" className="col-4 col-sm-2 col-form-label">Duration Type <span style={{color: "gray"}}>*</span>:</label>
                     <div className="form-group col-2">
                         <select className="form-select selectForm box box-2" id="duration_type" required 
-                            value={durationType} onChange={e => setDurationType(e.target.value)}
-                            style={durationType ? {}:{color: "gray"}}
+                            value={editDurationType} onChange={e => setEditDurationType(e.target.value)}
+                            style={editDurationType ? {}:{color: "gray"}}
                         >
                             <option value="">Select an option</option>
                             <option value="full-time">Full-Time</option>
@@ -184,9 +211,9 @@ const PostForm = () => {
                             className="form-control box box-2 col-1" 
                             placeholder="Job Location..." 
                             id="job_location" 
-                            value={locationCompany}
+                            value={editLocationCompany}
                             required
-                            onChange={e => setLocationCompany(e.target.value)}
+                            onChange={e => setEditLocationCompany(e.target.value)}
                         />
                     </div>
                 </div>
@@ -198,8 +225,8 @@ const PostForm = () => {
                             className="form-control box box-2 col-1" 
                             placeholder="Department..." 
                             id="job_department" 
-                            value={department}
-                            onChange={e => setDepartment(e.target.value)}
+                            value={editDepartment}
+                            onChange={e => setEditDepartment(e.target.value)}
                         />
                     </div>
                 </div>
@@ -211,8 +238,8 @@ const PostForm = () => {
                             className="form-control box box-2 col-1" 
                             placeholder="Sub-Department..."
                             id="job_subdepartment" 
-                            value={subDepartment}
-                            onChange={e => setSubDepartment(e.target.value)}
+                            value={editSubDepartment}
+                            onChange={e => setEditSubDepartment(e.target.value)}
                         />
                     </div>
                 </div>
@@ -224,8 +251,8 @@ const PostForm = () => {
                             className="form-control box box-2 col-1" 
                             placeholder="Report to..." 
                             id="job_reportto" 
-                            value={report}
-                            onChange={e => setReport(e.target.value)}
+                            value={editReport}
+                            onChange={e => setEditReport(e.target.value)}
                         />
                     </div>
                 </div>
@@ -233,6 +260,7 @@ const PostForm = () => {
                 <Editor
                     className="describe-job"
                     apiKey="7cem6u4zosjen9lg7ftfsxe5j3r8pa4xiium6ury9uvjbvmw"
+                    initialValue={editDescription}
                     init={{
                         menubar: false,
                         plugins: [
@@ -250,13 +278,11 @@ const PostForm = () => {
                 />
                 <br /><br />
                 <div className="publish-btn">
-                    <input className="pub-btn" type="submit" value="Publish" />
+                    <input className="pub-btn" type="submit" value="Save" />
                 </div>
             </form>
         </div>
     )
-
-
 }
 
-export default PostForm
+export default EditInfo;

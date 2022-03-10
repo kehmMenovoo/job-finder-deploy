@@ -36,6 +36,20 @@ export const DataProvider = ({children}) => {
     const [report, setReport] = useState("");
     const [description, setDescription] = useState("");
 
+    const [editBoost, setEditBoost] = useState(true);
+    const [editAvatar, setEditAvatar] = useState(UploadImage);
+    const [editCompany, setEditCompany] = useState("");
+    const [editLocationCompany, setEditLocationCompany] = useState("");
+    const [editDue, setEditDue] = useState("");
+    const [editPosition, setEditPosition] = useState("");
+    const [editTypeJob, setEditTypeJob] = useState('');
+    const [editDurationType, setEditDurationType] = useState("");
+    const [editEntryLevel, setEditEntryLevel] = useState("");
+    const [editDepartment, setEditDepartment] = useState("");
+    const [editSubDepartment, setEditSubDepartment] = useState("");
+    const [editReport, setEditReport] = useState("");
+    const [editDescription, setEditDescription] = useState("");
+
     const API_URL_All = 'https://api-for-jobfinder-project.herokuapp.com/data';
     let limit = 40;
     // let pageAddress = `/page${currentPage}`;
@@ -125,7 +139,7 @@ export const DataProvider = ({children}) => {
             company, 
             location: locationCompany,
             postDate,
-            due: format(new Date(due), 'MMM dd, yyyy'),
+            due,
             position,
             typeJob,
             durationType,
@@ -159,6 +173,64 @@ export const DataProvider = ({children}) => {
         }
 
     }
+    const handleDelete = async (id) => {
+        try{
+            history.goBack();
+            await api.delete(`/data/${id}`);
+            const postList = allData.filter(item => item.id !== id);
+            setAllData(postList);
+            setData(postList);
+          
+        }
+        catch(err) {
+            console.log(`Error ${err.message}!`);
+        }
+    }
+    const handleEditSave = async (id) => {
+        const datetime = format(new Date(), 'MMM dd, yyyy');
+        const updateInfo = {
+            boost: editBoost, 
+            id,
+            avatar: editAvatar, 
+            company: editCompany, 
+            location: editLocationCompany,
+            postDate: datetime,
+            due: editDue,
+            position: editPosition,
+            typeJob: editTypeJob,
+            durationType: editDurationType,
+            entryLevel: editEntryLevel,
+            department: editDepartment,
+            subDepartment: editSubDepartment,
+            Report: editReport,
+            description: editDescription
+        }
+        try{
+            history.push(`/jobinfo/${id}`);
+            window.scrollTo(0, 0);
+            const response = await api.put(`/data/${id}`, updateInfo);
+            // const res = await api.put(`/favorites/${id}`, updateInfo)
+            setAllData(allData.map(item => item.id === id ? {...response.data} : item));
+            setData(data.map(item => item.id === id ? {...response.data} : item))
+            setFavoriteData(favoriteData.map(item => item.id === id ? {...response.data} : item))
+            setAvatar(UploadImage ? UploadImage : "");
+            setEditCompany('');
+            setEditLocationCompany('');
+            setEditDue('');
+            setEditPosition('');
+            setEditTypeJob('');
+            setEditDurationType('');
+            setEditEntryLevel(''); 
+            setEditDepartment('');
+            setEditSubDepartment('');
+            setEditReport('');
+            setEditDescription('');
+        }
+        catch(err) {
+            console.log(`Error: ${err.message}`);
+        }
+    }
+
     allData.sort((a, b) => {
         return (a.boost === b.boost)? 0 : b.boost ? 1:-1;
     });
@@ -184,7 +256,13 @@ export const DataProvider = ({children}) => {
             due, setDue, position, setPosition, typeJob, setTypeJob,
             durationType, setDurationType, entryLevel, setEntrylevel, department, setDepartment,
             subDepartment, setSubDepartment, report, setReport, description, setDescription, 
-            handlePostJob, limit, favoriteData, setFavoriteData
+            handlePostJob, limit, favoriteData, setFavoriteData, handleDelete, handleEditSave,
+
+            editAvatar, setEditAvatar, editCompany, setEditCompany, editLocationCompany, setEditLocationCompany,
+            editDue, setEditDue, editPosition, setEditPosition, editTypeJob, setEditTypeJob,
+            editDurationType, setEditDurationType, editEntryLevel, setEditEntryLevel,editDepartment, setEditDepartment,
+            editSubDepartment, setEditSubDepartment, editReport, setEditReport, editDescription, setEditDescription,
+            editBoost, setEditBoost
         }}>
             {children}
         </DataContext.Provider>

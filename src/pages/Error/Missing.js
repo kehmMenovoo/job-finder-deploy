@@ -13,8 +13,8 @@ const Missing = () => {
                     We suggest that you return to main sections.</p>
                     <br />
 
-                    <div class="d-grid gap-2 d-md-block">
-                        <button class="btn btn-primary" type="button">
+                    <div className="d-grid gap-2 d-md-block">
+                        <button className="btn btn-primary" type="button">
                             <a href="/">GO TO HOMEPAGE</a>
                         </button>
                     </div>

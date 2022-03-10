@@ -31,7 +31,7 @@ const Slider = () => {
                             <div className="move-down">
                                 <Link to="jobtype" onClick={toTop}>
                                     Other {allData.length} Careers &nbsp;
-                                    <span class="iconify" data-icon="ic:outline-explore" data-width="28"></span>
+                                    <span className="iconify" data-icon="ic:outline-explore" data-width="28"></span>
                                 </Link>
                             </div>
                         </div>

@@ -13,7 +13,7 @@ const DurationJobs = ({jobTime, setJobTime}) => {
                 <option value="internship">Internship</option>
                 <option value="contract">Contract</option>
                 <option value="temporary">Temporary</option>
-                <option value="otherTime">Others</option>
+                <option value="unknown">Others</option>
             </select>
         </>
     )

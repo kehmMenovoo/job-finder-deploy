@@ -8,18 +8,18 @@ const DiffJobs = ({jobType, setJobType}) => {
         <>
             <select className="form-select" aria-label="Default select job-type" value={jobType} onChange={e => getValueType(e)}>
                 <option value="">All Types</option>
-                <option value="agriculture">Agriculture, Food, and Natural Resources</option>
-                <option value="architecture">Architecture and Construction</option>
-                <option value="art">Arts, Audio/Video Technology, and Communication</option>
-                <option value="business">Business and Finance</option>
-                <option value="education">Education and Training</option>
-                <option value="government">Government and Public Administration</option>
-                <option value="health">Health Science</option>
-                <option value="IT">Information Technology</option>
-                <option value="law">Law, Public Safety, Corrections, and Security</option>
-                <option value="marketing">Marketing</option>
-                <option value="science">Science, Technology, Engineering, and Math</option>
-                <option value="otherType">Others</option>
+                <option value="Agriculture, Food, and Natural Resources">Agriculture, Food, and Natural Resources</option>
+                <option value="aArchitecture and Construction">Architecture and Construction</option>
+                <option value="Arts, Audio/Video Technology, and Communication">Arts, Audio/Video Technology, and Communication</option>
+                <option value="Business and Finance">Business and Finance</option>
+                <option value="Education and Training">Education and Training</option>
+                <option value="Government and Public Administration">Government and Public Administration</option>
+                <option value="Health Science">Health Science</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Law, Public Safety, Corrections, and Security">Law, Public Safety, Corrections, and Security</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Science, Technology, Engineering, and Math">Science, Technology, Engineering, and Math</option>
+                <option value="unknown">Others</option>
             </select>
         </>
     )

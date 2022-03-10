@@ -44,8 +44,8 @@ const JobItems = ({jobData}) => {
            
            {pageCount > 1 && splitLocation[1] && jobData.length <= limit ? 
                 <ReactPaginate
-                    previousLabel={<><i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i></>}
-                    nextLabel={<><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></>}
+                    previousLabel={<><i className="fa fa-angle-left"></i><i className="fa fa-angle-left"></i></>}
+                    nextLabel={<><i className="fa fa-angle-right"></i><i className="fa fa-angle-right"></i></>}
                     breakLabel={"..."}
                     pageCount={pageCount}
                     marginPagesDisplayed={2}

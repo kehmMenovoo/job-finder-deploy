@@ -628,6 +628,9 @@ footer .row .f-menu a:hover {
   padding-bottom: 20px;
   width: fit-content;
 }
+.info-job .job-sidebar .tools .more-tools:focus-within .iconify {
+  color: #2b95ff;
+}
 .info-job .job-sidebar .tools .more-tools .iconify {
   font-size: 21px;
   color: #525252;
@@ -635,6 +638,9 @@ footer .row .f-menu a:hover {
 .info-job .job-sidebar .tools .more-tools .iconify:hover {
   cursor: pointer;
   color: #2b95ff;
+}
+.info-job .job-sidebar .tools .more-tools .dropdown-menu .dropdown-item:hover {
+  cursor: pointer;
 }
 .info-job .job-sidebar .info-logo {
   width: 100%;
@@ -1851,6 +1857,13 @@ footer .row .f-menu a:hover {
   background-color: white;
 }
 .job-post select:hover {
+  cursor: pointer;
+}
+.job-post .back-btn {
+  color: gray;
+}
+.job-post .back-btn:hover {
+  text-decoration: underline;
   cursor: pointer;
 }
 .job-post .form-group-heading {

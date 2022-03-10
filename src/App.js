@@ -2,6 +2,7 @@ import About from "./pages/About/About";
 import Boost from "./layout/Boost";
 import Contact from "./pages/Contact/Contact";
 import DataContext from "./contexts/DataContext";
+import EditInfo from "./pages/EditInfo/EditInfo";
 import Favorite from "./pages/Favorites/Favorite";
 import Header from "./pages/Home/Header/Header";
 import Home from "./pages/Home/Home";
@@ -23,7 +24,7 @@ function App() {
   const {splitLocation, search} = useContext(DataContext);
   
   const title=["Search", "Home", "Job Types", "Favorites", "Post", "Contact Us", "Job Information", "Register", 
-    "Sign in", "Boost", "Post Project", "About", "Privacy", "Term of Use", "Page Not Found"];
+    "Sign in", "Boost", "Post Project", "About", "Privacy", "Term of Use","Edit Information", "Page Not Found"];
   const main = " | Khom Rok";
   const titleName = document.querySelector("title");
 
@@ -42,7 +43,8 @@ function App() {
     case "about": titleName.innerHTML = title[11] + main; break;
     case "privacy": titleName.innerHTML = title[12] + main; break;
     case "termofuse": titleName.innerHTML = title[13] + main; break;
-    default: titleName.innerHTML = title[14] + main;
+    case "edit": titleName.innerHTML=title[14] + main; break;
+    default: titleName.innerHTML = title[15] + main;
   }
 
   return (
@@ -60,6 +62,7 @@ function App() {
             <Route path="/register" component={Register} />
             <Route path="/sign_in" component={SignIn} />
             <Route path="/jobinfo/:id" component={JobInfo} />
+            <Route path="/edit/:id" component={EditInfo} />
             <Route path="/boost" component={Boost} />
             <Route path="/postproject" component={PostProject} />
             <Route path="/about" component={About} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import format from 'date-fns/format';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -27,7 +28,7 @@ const FavoriteItems = ({item}) => {
                                 <div className="card-body">
                                     <h5 className="card-title">{shrink(item.company, 19)}</h5>
                                     <p className="card-text area"><span className="iconify" data-icon="entypo:location"></span> {shrink(item.location, 11)}</p>
-                                    <p className="card-text date"><small className="text-muted">Due: {item.due}</small></p>
+                                    <p className="card-text date"><small className="text-muted">Due: {format(new Date(item.due), 'MMM dd, yyyy')}</small></p>
                                     {item.boost ? (<small className='pop' style={{color: "#33cc33"}}>(Popular)</small>) : null} 
                                 </div>
                                 
@@ -44,8 +45,8 @@ const FavoriteItems = ({item}) => {
                         <div className="apply">
                             <form>
                                 <button type="submit">
-                                    <span class="iconify" data-icon="bi:send-check"></span>
-                                    <span class="iconify" data-icon="bi:send-check-fill"></span>
+                                    <span className="iconify" data-icon="bi:send-check"></span>
+                                    <span className="iconify" data-icon="bi:send-check-fill"></span>
                                 </button>
                             </form>
                         </div>

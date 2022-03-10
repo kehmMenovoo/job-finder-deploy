@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import DataContext from "../../contexts/DataContext";
+import format from 'date-fns/format';
 
 const InfoContent = ({jobData}) => {
     
-    const {history} = useContext(DataContext);
-
-    // document.querySelector('#info').innerText = jobData.description ? jobData.description:"No description!";
+    const {history, handleDelete} = useContext(DataContext);
 
     function titleCase(str) {
         var splitStr = str.split(' ');
@@ -17,11 +16,12 @@ const InfoContent = ({jobData}) => {
     }
 
     const goBack = () => {
-        history.goBack();
+        history.push('/jobtype');
     }
     const goTop = () => {
         window.scrollTo(0, 0);
     }
+
     
     return (
         <div className="info-job">
@@ -33,7 +33,16 @@ const InfoContent = ({jobData}) => {
                             <span className="iconify" data-icon="bi:arrow-left-circle-fill"></span>
                         </div>
                         <div className="more-tools">
-                            <span class="iconify" data-icon="bi:three-dots-vertical"></span>
+                            <div className="dropdown">
+                                <article className="tool" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span className="iconify" data-icon="bi:three-dots-vertical"></span>
+                                </article>
+
+                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><article className="dropdown-item" onClick={() => handleDelete(jobData.id)}>Delete</article></li>
+                                    <li><Link to={`/edit/${jobData.id}`} className="dropdown-item" >Edit</Link></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div className="info-logo">
@@ -54,8 +63,8 @@ const InfoContent = ({jobData}) => {
                     <div className="apply">
                         <form>
                             <button>
-                                <span class="iconify" data-icon="bi:send-check"></span>
-                                <span class="iconify" data-icon="bi:send-check-fill"></span>
+                                <span className="iconify" data-icon="bi:send-check"></span>
+                                <span className="iconify" data-icon="bi:send-check-fill"></span>
                             </button>
                         </form>
                     </div>
@@ -87,7 +96,7 @@ const InfoContent = ({jobData}) => {
                         </tr>
                         <tr>
                             <td><b>Closing Date </b></td>
-                            <td>: <span className="closing">{titleCase(jobData.due)}</span></td>
+                            <td>: <span className="closing">{titleCase(format(new Date(jobData.due), 'MMM dd, yyyy'))}</span></td>
                         </tr>
                         <tr>
                             <td><b>Job Type </b></td>
