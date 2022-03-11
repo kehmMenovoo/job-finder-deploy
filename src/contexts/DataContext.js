@@ -206,10 +206,10 @@ export const DataProvider = ({children}) => {
             description: editDescription
         }
         try{
-            history.push(`/jobinfo/${id}`);
-            window.scrollTo(0, 0);
+            history.push(`/jobtype`);
+            
             const response = await api.put(`/data/${id}`, updateInfo);
-            // const res = await api.put(`/favorites/${id}`, updateInfo)
+            const temp = await api.put(`/favorites/${id}`, updateInfo);
             setAllData(allData.map(item => item.id === id ? {...response.data} : item));
             setData(data.map(item => item.id === id ? {...response.data} : item))
             setFavoriteData(favoriteData.map(item => item.id === id ? {...response.data} : item))

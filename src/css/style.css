@@ -705,7 +705,7 @@ footer .row .f-menu a:hover {
 }
 
 .favorites {
-  padding: 70px 10px;
+  padding: 70px 10px 10px 10px;
 }
 .favorites .sidebar .card {
   background-color: white;
@@ -781,8 +781,7 @@ footer .row .f-menu a:hover {
   margin-top: 40px;
   margin-left: 340px;
   margin-right: 20px;
-  min-height: 80vh;
-  margin-bottom: -60px;
+  min-height: 100vh;
 }
 .favorites .fav-items-content .row .card {
   border-radius: 10px;

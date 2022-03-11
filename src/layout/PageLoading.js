@@ -28,7 +28,8 @@ const PageLoading = () => {
                         <div className="error-message">
                             <h3>{fetchError}</h3>
                             <p>Sorry, we couldn't load this page. <br />
-                            We suggest to reload the page</p>
+                            We suggest to reload the page <br />
+                            Or</p>
                             <br />
 
                             <div className="d-grid gap-2 d-md-block">

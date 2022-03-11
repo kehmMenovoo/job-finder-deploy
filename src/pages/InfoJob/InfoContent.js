@@ -16,7 +16,8 @@ const InfoContent = ({jobData}) => {
     }
 
     const goBack = () => {
-        history.push('/jobtype');
+        history.goBack();
+        console.log(JSON.stringify(history.goBack()));
     }
     const goTop = () => {
         window.scrollTo(0, 0);
